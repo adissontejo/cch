@@ -1,5 +1,13 @@
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+import { ThemeProvider } from 'styled-components';
 
-export default MyApp
+import GlobalStyles from '~/styles/global';
+import theme from '~/styles/theme';
+
+const MyApp = ({ Component, pageProps }) => (
+  <ThemeProvider theme={theme}>
+    <GlobalStyles />
+    <Component {...pageProps} />
+  </ThemeProvider>
+);
+
+export default MyApp;
