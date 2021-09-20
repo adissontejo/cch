@@ -37,6 +37,10 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt">
         <Head>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gloria+Hallelujah&display=swap"
+            rel="stylesheet"
+          />
           <meta charSet="utf-8" />
         </Head>
         <body>
