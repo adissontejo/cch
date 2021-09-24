@@ -1,28 +1,74 @@
-import { Navbar } from '~/components';
-import Card from "../components/Card";
+import { useState } from 'react';
+import { Card, Navbar } from '~/components';
 
-import { Container } from './styles';
+import { CardsDiv, Container } from './styles';
 
 const Home = () => {
-  const card_exemplo = {
-    text:'Aqui vai a ______ incompleta',
-    type:'question', 
-    size:'sm', 
-    autor:'Petrola', 
-    baralho:'Tandaiola', 
-    create_at:'hoje né'
-  }
+  const cards = [
+    {
+      text: 'Carta',
+      type: 'answer',
+      autor: 'Desconhecido',
+      baralho: 'Básico',
+      createdAt: 'Hoje',
+    },
+    {
+      text: 'Carta',
+      type: 'answer',
+      autor: 'Desconhecido',
+      baralho: 'Básico',
+      createdAt: 'Hoje',
+    },
+    {
+      text: 'Carta',
+      type: 'answer',
+      autor: 'Desconhecido',
+      baralho: 'Básico',
+      createdAt: 'Hoje',
+    },
+    {
+      text: 'Carta',
+      type: 'answer',
+      autor: 'Desconhecido',
+      baralho: 'Básico',
+      createdAt: 'Hoje',
+    },
+    {
+      text: 'Carta',
+      type: 'answer',
+      autor: 'Desconhecido',
+      baralho: 'Básico',
+      createdAt: 'Hoje',
+    },
+    {
+      text: 'Carta',
+      type: 'answer',
+      autor: 'Desconhecido',
+      baralho: 'Básico',
+      createdAt: 'Hoje',
+    },
+  ];
 
-  return(
+  const [backside, setBackside] = useState(true);
+
+  setTimeout(() => setBackside(!backside), 5000);
+
+  return (
     <Container>
       <Navbar />
-      <Card data={card_exemplo}/>
-      <h1>cch</h1>
+      <CardsDiv>
+        {cards.map((item, index) => (
+          <Card
+            id={`${index}`}
+            data={item}
+            size="sm"
+            backside={backside}
+            animationDelay={index * 200}
+          />
+        ))}
+      </CardsDiv>
     </Container>
-  )
-
-}
-  
-
+  );
+};
 
 export default Home;
