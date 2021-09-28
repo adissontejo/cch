@@ -14,5 +14,18 @@ export default createGlobalStyle`
   button {
     border: 0;
     background-color: transparent;
+    cursor: pointer;
+  }
+
+  h1, h2, label, button, a, input {
+    font-family: 'Gloria Hallelujah';
+  }
+
+  fieldset {
+    border: 0;
+  }
+
+  input {
+    outline: none;
   }
 `;
