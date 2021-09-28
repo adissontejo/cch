@@ -20,7 +20,7 @@ export const NavItems = styled.div<NavItemsProps>`
 
   display: flex;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(36, 0, 70, 0.85);
   overflow: hidden;
 
   max-height: 150px;

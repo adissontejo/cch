@@ -1,74 +1,50 @@
-import { useState } from 'react';
-import { Card, Navbar } from '~/components';
+import Link from 'next/link';
 
-import { CardsDiv, Container } from './styles';
+import { Navbar } from '~/components';
 
-const Home = () => {
-  const cards = [
-    {
-      text: 'Carta',
-      type: 'answer',
-      autor: 'Desconhecido',
-      baralho: 'Básico',
-      createdAt: 'Hoje',
-    },
-    {
-      text: 'Carta',
-      type: 'answer',
-      autor: 'Desconhecido',
-      baralho: 'Básico',
-      createdAt: 'Hoje',
-    },
-    {
-      text: 'Carta',
-      type: 'answer',
-      autor: 'Desconhecido',
-      baralho: 'Básico',
-      createdAt: 'Hoje',
-    },
-    {
-      text: 'Carta',
-      type: 'answer',
-      autor: 'Desconhecido',
-      baralho: 'Básico',
-      createdAt: 'Hoje',
-    },
-    {
-      text: 'Carta',
-      type: 'answer',
-      autor: 'Desconhecido',
-      baralho: 'Básico',
-      createdAt: 'Hoje',
-    },
-    {
-      text: 'Carta',
-      type: 'answer',
-      autor: 'Desconhecido',
-      baralho: 'Básico',
-      createdAt: 'Hoje',
-    },
-  ];
+import {
+  Container,
+  Content,
+  Field,
+  Title,
+  CodeWrapper,
+  Actions,
+} from './styles';
 
-  const [backside, setBackside] = useState(true);
-
-  setTimeout(() => setBackside(!backside), 5000);
-
-  return (
-    <Container>
-      <Navbar />
-      <CardsDiv>
-        {cards.map((item, index) => (
-          <Card
-            id={`${index}`}
-            data={item}
-            size="sm"
-            backside={backside}
-            animationDelay={index * 200}
-          />
-        ))}
-      </CardsDiv>
-    </Container>
-  );
-};
+const Home = () => (
+  <Container>
+    <Navbar />
+    <Content>
+      <section>
+        <Title>Entrar em um jogo</Title>
+        <form action="">
+          <Field>
+            <label htmlFor="code">
+              Código da sala
+              <CodeWrapper>
+                <input name="code1" type="text" maxLength={1} />
+                <input name="code2" type="text" maxLength={1} />
+                <input name="code3" type="text" maxLength={1} />
+                <input name="code4" type="text" maxLength={1} />
+                <input name="code5" type="text" maxLength={1} />
+                <input name="code6" type="text" maxLength={1} />
+              </CodeWrapper>
+            </label>
+          </Field>
+          <Field>
+            <label htmlFor="player">
+              Nome do jogador
+              <input name="player" type="text" />
+            </label>
+          </Field>
+          <Actions>
+            <button type="submit">entrar</button>
+            <Link href="/room">ou crie uma sala</Link>
+          </Actions>
+        </form>
+      </section>
+    </Content>
+  </Container>
+);
 
 export default Home;
