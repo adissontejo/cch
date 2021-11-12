@@ -1,14 +1,19 @@
-import { useContext, createContext, useState, useEffect } from 'react';
+import { useContext, createContext, useState, useEffect, FC } from 'react';
 import { ThemeProvider as StyledProvider } from 'styled-components';
 import lodash from 'lodash';
 
 import { Theme, defaultTheme, themes } from './theme';
 
+export type ThemeContextProps = {
+  changeTheme: (newTheme: string) => void;
+  colorTheme: string;
+};
+
 const LOCAL_STORAGE_KEY = '@CB/theme';
 
-const ThemeContext = createContext({});
+const ThemeContext = createContext<ThemeContextProps>({} as ThemeContextProps);
 
-const ThemeProvider = ({ children }) => {
+const ThemeProvider: FC = ({ children }) => {
   const [colorTheme, setColorTheme] = useState('default');
   const [theme, setTheme] = useState<Theme>(defaultTheme);
 
@@ -37,7 +42,7 @@ const ThemeProvider = ({ children }) => {
   }, []);
 
   return (
-    <ThemeContext.Provider value={{ changeTheme }}>
+    <ThemeContext.Provider value={{ changeTheme, colorTheme }}>
       <StyledProvider theme={theme}>{children}</StyledProvider>
     </ThemeContext.Provider>
   );

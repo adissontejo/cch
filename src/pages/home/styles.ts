@@ -18,11 +18,10 @@ export const Content = styled.main`
     width: 100%;
     background: white;
     padding: 2rem;
-    max-width: 530px;
+    max-width: 455px;
 
     margin: 0 auto;
-    border: 1px solid ${({ theme }) => theme.colors.primary};
-    border-radius: 8px;
+    border-radius: 15px;
 
     @media screen and (max-width: ${mobile}px) {
       height: 100%;
@@ -35,7 +34,11 @@ export const Content = styled.main`
 
 export const Title = styled.h1`
   text-align: center;
-  font-size: 1.5rem;
+  font-weight: 400;
+  font-size: 2.125rem;
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid ${props => props.theme.colors.primary};
 `;
 
 export const Field = styled.fieldset`
@@ -45,14 +48,14 @@ export const Field = styled.fieldset`
 
     text-align: center;
     font-size: 1.5rem;
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.text};
 
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 
     input {
       padding: 0.5rem;
-      border: 1px solid ${({ theme }) => theme.colors.secondary};
-      border-radius: 5px;
+      border: 2px solid ${({ theme }) => theme.colors.primary};
+      border-radius: 15px;
       height: 60px;
       margin-top: 1rem;
 
@@ -81,14 +84,14 @@ export const Actions = styled.div`
   text-align: center;
 
   button {
-    background: ${({ theme }) => theme.colors.secondary};
+    background: ${({ theme }) => theme.colors.primary};
     padding: 0.5rem;
     width: 80%;
     align-self: center;
 
     color: white;
     font-size: 1.5rem;
-    border-radius: 5px;
+    border-radius: 15px;
 
     transition: all 0.3s ease;
 
@@ -105,7 +108,7 @@ export const Actions = styled.div`
   a {
     margin-top: 0.5rem;
     font-size: 1.25rem;
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.secondary};
     transition: all 0.3s ease;
 
     :hover {

@@ -17,14 +17,20 @@ const Home = () => {
 
   return (
     <Container>
-      <Navbar />
+      <Navbar showLogo={false} />
       <Content>
         <section>
           <Title>Entrar em um jogo</Title>
           <form action="">
             <Field>
+              <label htmlFor="player">
+                Seu nome de Jogador
+                <input name="player" type="text" />
+              </label>
+            </Field>
+            <Field>
               <label htmlFor="code">
-                Código da sala
+                Código da Sala
                 <CodeWrapper>
                   {codeInputs.map((item, index) => (
                     <input
@@ -38,15 +44,9 @@ const Home = () => {
                 </CodeWrapper>
               </label>
             </Field>
-            <Field>
-              <label htmlFor="player">
-                Nome do jogador
-                <input name="player" type="text" />
-              </label>
-            </Field>
             <Actions>
-              <button type="submit">entrar</button>
-              <Link href="/room">ou crie uma sala</Link>
+              <button type="submit">Entrar no jogo!</button>
+              <Link href="/room">Ou crie uma sala</Link>
             </Actions>
           </form>
         </section>

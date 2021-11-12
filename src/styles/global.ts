@@ -17,10 +17,14 @@ export default createGlobalStyle`
     cursor: pointer;
   }
 
-  h1, h2, label, button, a, input {
-    font-family: 'Gloria Hallelujah';
+  h1, h2, label, a, input {
+    font-family: ${props => props.theme.font.primary};
   }
 
+  button {
+    font-family: ${props => props.theme.font.secondary};
+  }
+  
   fieldset {
     border: 0;
   }

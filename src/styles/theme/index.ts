@@ -1,2 +1,2 @@
 export { themes, defaultTheme } from './theme';
-export { ThemeProvider } from './Context';
+export { ThemeProvider, useTheme } from './Context';

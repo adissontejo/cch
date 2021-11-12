@@ -38,7 +38,7 @@ export default class MyDocument extends Document {
       <Html lang="pt">
         <Head>
           <link
-            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gloria+Hallelujah&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee&display=swap"
             rel="stylesheet"
           />
           <meta charSet="utf-8" />

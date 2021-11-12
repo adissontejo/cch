@@ -11,11 +11,10 @@ export const Container = styled.nav`
   margin: auto;
   padding: 1rem;
 
-  border-bottom: 1px solid ${props => props.theme.colors.primary};
   background-color: transparent;
 
   a {
-    font-family: 'Gloria Hallelujah';
+    font-family: ${props => props.theme.font.primary};
   }
 `;
 
@@ -25,6 +24,16 @@ export const NavItems = styled.div`
   justify-content: flex-end;
 
   gap: 2rem;
+
+  button {
+    color: ${({ theme }) => theme.colors.white};
+    font-size: 1.5rem;
+    transition: all 0.2s;
+
+    :hover {
+      opacity: 0.8;
+    }
+  }
 
   @media screen and (max-width: 768px) {
     display: none;
