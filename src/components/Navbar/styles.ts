@@ -11,7 +11,7 @@ export const Container = styled.nav`
   margin: auto;
   padding: 1rem;
 
-  border-bottom: 1px solid rgb(255, 158, 0, 0.5);
+  border-bottom: 1px solid ${props => props.theme.colors.primary};
   background-color: transparent;
 
   a {

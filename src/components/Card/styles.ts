@@ -58,8 +58,8 @@ export const DivCard = styled.div<CardProps>`
       ? 'width:290px; height:290px; font-size: 24px; line-height: 48px;'
       : '',
     props.data.type === 'question'
-      ? 'background-color:#FF9100;'
-      : 'background-color:#3C096C;',
+      ? `background-color: ${props.theme.colors.primary};`
+      : `background-color: ${props.theme.colors.secondary};`,
   ]};
   display: flex;
   position: relative;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Label = styled.a`
-  color: #ff9e00;
+  color: ${props => props.theme.colors.primary};
   cursor: pointer;
   display: block;
   transition: all 0.3s;

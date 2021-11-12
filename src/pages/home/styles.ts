@@ -5,7 +5,7 @@ const mobile = 768;
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-  background: ${({ theme }) => theme.colors.primary};
+  background: ${({ theme }) => theme.colors.background};
 `;
 
 export const Content = styled.main`
@@ -21,7 +21,7 @@ export const Content = styled.main`
     max-width: 530px;
 
     margin: 0 auto;
-    border: 1px solid ${({ theme }) => theme.colors.accent};
+    border: 1px solid ${({ theme }) => theme.colors.primary};
     border-radius: 8px;
 
     @media screen and (max-width: ${mobile}px) {
@@ -51,7 +51,7 @@ export const Field = styled.fieldset`
 
     input {
       padding: 0.5rem;
-      border: 1px solid ${({ theme }) => theme.colors.accent};
+      border: 1px solid ${({ theme }) => theme.colors.secondary};
       border-radius: 5px;
       height: 60px;
       margin-top: 1rem;
@@ -81,7 +81,7 @@ export const Actions = styled.div`
   text-align: center;
 
   button {
-    background: ${({ theme }) => theme.colors.accent};
+    background: ${({ theme }) => theme.colors.secondary};
     padding: 0.5rem;
     width: 80%;
     align-self: center;

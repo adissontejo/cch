@@ -26,7 +26,7 @@ export const NavItems = styled.div<NavItemsProps>`
   max-height: 150px;
   padding: 10px 0px;
   gap: 5px;
-  border-bottom: 2px solid #ff9e00;
+  border-bottom: 2px solid ${props => props.theme.colors.primary};
 
   transition: all 0.5s, opacity 0.3s ease-out;
 
