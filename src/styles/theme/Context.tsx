@@ -19,6 +19,7 @@ const ThemeProvider: FC = ({ children }) => {
 
   const changeTheme = (newTheme: string) => {
     setColorTheme(newTheme);
+    localStorage.setItem(LOCAL_STORAGE_KEY, newTheme);
   };
 
   const getStoragedTheme = () => {
