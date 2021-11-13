@@ -61,6 +61,12 @@ export const Field = styled.fieldset`
 
       font-size: 1.5rem;
       text-align: center;
+
+      :focus {
+        box-shadow: 2px 1px 55px -4px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: 2px 1px 55px -4px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 2px 1px 55px -4px rgba(0, 0, 0, 0.1);
+      }
     }
   }
 `;
@@ -105,14 +111,20 @@ export const Actions = styled.div`
     }
   }
 
-  a {
+  span {
+    display: block;
     margin-top: 0.5rem;
+    font-family: ${({ theme }) => theme.font.primary};
     font-size: 1.25rem;
-    color: ${({ theme }) => theme.colors.secondary};
-    transition: all 0.3s ease;
+    color: ${({ theme }) => theme.colors.text};
 
-    :hover {
-      opacity: 0.7;
+    a {
+      color: ${({ theme }) => theme.colors.secondary};
+      transition: all 0.3s ease;
+
+      :hover {
+        opacity: 0.7;
+      }
     }
   }
 `;

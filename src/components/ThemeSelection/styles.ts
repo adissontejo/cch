@@ -6,6 +6,7 @@ export const Overlay = styled.div`
   left: 0;
   top: 0;
   right: 0;
+  z-index: 2;
 
   display: flex;
   align-items: center;
@@ -14,6 +15,7 @@ export const Overlay = styled.div`
 `;
 
 export const Content = styled.div`
+  z-index: 3;
   width: 100%;
   max-width: 420px;
   border-radius: 15px;

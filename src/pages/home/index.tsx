@@ -46,7 +46,9 @@ const Home = () => {
             </Field>
             <Actions>
               <button type="submit">Entrar no jogo!</button>
-              <Link href="/room">Ou crie uma sala</Link>
+              <span>
+                Ou <Link href="/room">crie uma sala</Link>
+              </span>
             </Actions>
           </form>
         </section>
