@@ -1,8 +1,15 @@
-import { useContext, createContext, useState, useEffect, FC } from 'react';
+import {
+  useContext,
+  createContext,
+  useState,
+  useEffect,
+  FC,
+  useCallback,
+} from 'react';
 import { ThemeProvider as StyledProvider } from 'styled-components';
 import lodash from 'lodash';
 
-import { ThemeSelection } from '~/components';
+import { ThemeSelection, Logo } from '~/components';
 
 import { Theme, defaultTheme, themes } from './theme';
 
@@ -10,6 +17,7 @@ export type ThemeContextProps = {
   changeTheme: (newTheme: string) => void;
   colorTheme: string;
   showThemeSelection: () => void;
+  renderLogo: FC;
 };
 
 const LOCAL_STORAGE_KEY = '@CB/theme';
@@ -46,6 +54,8 @@ const ThemeProvider: FC = ({ children }) => {
     setShowSelection(false);
   };
 
+  const renderLogo = useCallback(() => <Logo colors={theme.colors} />, [theme]);
+
   useEffect(() => {
     getNewTheme();
   }, [colorTheme]);
@@ -56,7 +66,7 @@ const ThemeProvider: FC = ({ children }) => {
 
   return (
     <ThemeContext.Provider
-      value={{ changeTheme, colorTheme, showThemeSelection }}
+      value={{ changeTheme, colorTheme, showThemeSelection, renderLogo }}
     >
       <StyledProvider theme={theme}>
         {showSelection && <ThemeSelection dismiss={dismissThemeSelection} />}

@@ -1,6 +1,9 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
+import { logoIcon } from '~/assets';
 import { Navbar } from '~/components';
+import { useTheme } from '~/styles/theme';
 
 import {
   Container,
@@ -9,17 +12,27 @@ import {
   Title,
   CodeWrapper,
   Actions,
+  JoinGame,
+  Menu,
 } from './styles';
 import useCodeInputs from './useCodeInputs';
 
 const Home = () => {
   const { codeInputs } = useCodeInputs();
+  const { renderLogo } = useTheme();
 
   return (
     <Container>
       <Navbar showLogo={false} />
       <Content>
-        <section>
+        <Menu>
+          {renderLogo({})}
+          <div>
+            <button type="button">Como Jogar?</button>
+            <button type="button">Criar Baralhos</button>
+          </div>
+        </Menu>
+        <JoinGame>
           <Title>Entrar em um jogo</Title>
           <form action="">
             <Field>
@@ -51,7 +64,7 @@ const Home = () => {
               </span>
             </Actions>
           </form>
-        </section>
+        </JoinGame>
       </Content>
     </Container>
   );

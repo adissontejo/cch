@@ -14,21 +14,53 @@ export const Content = styled.main`
   width: 100%;
   height: calc(100% - 95px);
 
-  section {
-    width: 100%;
-    background: white;
-    padding: 2rem;
-    max-width: 455px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
 
-    margin: 0 auto;
-    border-radius: 15px;
+export const Menu = styled.section`
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 
-    @media screen and (max-width: ${mobile}px) {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+  img {
+    max-width: 80%;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+
+    button {
+      color: ${({ theme }) => theme.colors.white};
+      font-family: ${({ theme }) => theme.font.primary};
+      font-size: 2.175rem;
+
+      :hover {
+        opacity: 0.8;
+      }
     }
+  }
+`;
+
+export const JoinGame = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: white;
+  padding: 2rem;
+  max-width: 455px;
+
+  margin: 0 auto;
+  border-radius: 15px;
+
+  @media screen and (max-width: ${mobile}px) {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 `;
 
