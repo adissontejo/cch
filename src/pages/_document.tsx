@@ -42,6 +42,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
           <meta charSet="utf-8" />
+          <title>Cartas do Baralho</title>
         </Head>
         <body>
           <Main />
