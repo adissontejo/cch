@@ -44,13 +44,6 @@ const themes = {
     },
     name: 'Farol',
   },
-  flamengo: {
-    colors: {
-      primary: '#f00',
-      secondary: '#555',
-    },
-    name: 'Flamengo',
-  },
   default: {
     colors: {
       primary: '#F46036',
