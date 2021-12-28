@@ -1,4 +1,4 @@
-import { render } from '@test/components';
+import { render, screen } from '@test/components';
 import Card from '..';
 
 const defaultProps = {
@@ -6,7 +6,7 @@ const defaultProps = {
     text: 'Card text',
     author: 'Card author',
     deck: 'Deck name',
-    createdAt: new Date('2021-12-27'),
+    createdAt: new Date(),
     isQuestion: false,
   },
 };
@@ -16,5 +16,14 @@ describe('Card component', () => {
     const { getByText } = render(<Card {...defaultProps} />);
 
     expect(getByText(defaultProps.data.text)).toBeInTheDocument();
+    expect(
+      screen.getByText(defaultProps.data.deck, { exact: false })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(defaultProps.data.author, { exact: false })
+    ).toBeInTheDocument();
+    expect(
+      getByText('less than a minute', { exact: false })
+    ).toBeInTheDocument();
   });
 });
