@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
-import { Navbar } from '~/components';
-import { useTheme } from '~/styles/theme';
+import { Navbar, Logo } from '~/components';
 
 import {
   Container,
@@ -17,7 +16,6 @@ import useCodeInputs from './useCodeInputs';
 
 const Home = () => {
   const { codeInputs } = useCodeInputs();
-  const { renderLogo } = useTheme();
 
   return (
     <>
@@ -25,7 +23,7 @@ const Home = () => {
         <Navbar showLogo={false} />
         <Content>
           <Menu>
-            {renderLogo({})}
+            <Logo />
             <div>
               <button type="button">Como Jogar?</button>
               <button type="button">Criar Baralhos</button>

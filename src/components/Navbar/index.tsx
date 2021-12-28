@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
-import { logoIcon, themeIcon } from '~/assets';
 import { useTheme } from '~/styles/theme';
+import { Logo } from '~/components';
 
 import NavMobile from './NavMobile';
 import { Container, NavItems } from './styles';
@@ -16,14 +16,18 @@ const Navbar = ({ showLogo }: NavbarProps) => {
   return (
     <>
       <Container>
-        {showLogo && (
-          <Image src={logoIcon} alt="Cartas Do Baralho" draggable={false} />
-        )}
+        {showLogo && <Logo />}
 
         <NavItems>
           <button type="button" onClick={showThemeSelection}>
             Temas
-            <Image src={themeIcon} alt="Temas" draggable={false} />
+            <Image
+              src="/assets/icons/theme.svg"
+              width={32}
+              height={32}
+              alt="Temas"
+              draggable={false}
+            />
           </button>
         </NavItems>
 

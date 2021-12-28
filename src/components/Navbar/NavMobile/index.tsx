@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-import menuIcon from '~/assets/icons/menu.svg';
 import { NavToggle, NavItems } from './styles';
 
 const NavMobile = () => {
@@ -14,7 +13,12 @@ const NavMobile = () => {
   return (
     <>
       <NavToggle onClick={() => toggleMenu()}>
-        <Image src={menuIcon} />
+        <Image
+          height={50}
+          width={50}
+          alt="Ligar menu"
+          src="/assets/icons/menu.svg"
+        />
       </NavToggle>
 
       <NavItems visible={visible} />

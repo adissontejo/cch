@@ -1,13 +1,6 @@
 import { Svg } from './styles';
 
-interface LogoProps {
-  colors: {
-    primary: string;
-    secondary: string;
-  };
-}
-
-const Logo = ({ colors }: LogoProps) => (
+const Logo = () => (
   <Svg
     width="603"
     height="150"
