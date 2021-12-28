@@ -20,6 +20,7 @@ export const Content = styled.div`
   max-width: 420px;
   border-radius: 15px;
   padding: 20px;
+  margin: 0 1rem;
 
   background: ${({ theme }) => theme.colors.white}; ;
 `;

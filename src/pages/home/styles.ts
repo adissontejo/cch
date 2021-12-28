@@ -1,20 +1,22 @@
 import styled from 'styled-components';
 
-const mobile = 768;
-
 export const Container = styled.div`
+  display: flex;
+  margin: 0 auto;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 95px);
   background: ${({ theme }) => theme.colors.background};
+  max-width: 1400px;
 `;
 
 export const Content = styled.main`
   display: flex;
   align-items: center;
   width: 100%;
-  height: calc(100% - 95px);
+  min-height: calc(100% - 95px);
+  gap: 3rem;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}px) {
     flex-direction: column;
   }
 `;
@@ -22,24 +24,34 @@ export const Content = styled.main`
 export const Menu = styled.section`
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 0 auto;
 
-  img {
+  svg {
     max-width: 80%;
   }
 
   div {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 1rem;
+    gap: 1rem;
 
     button {
       color: ${({ theme }) => theme.colors.white};
       font-family: ${({ theme }) => theme.font.primary};
-      font-size: 2.175rem;
+      font-size: 1.75rem;
 
       :hover {
         opacity: 0.8;
+      }
+    }
+
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.sm}px) {
+      gap: 1.5rem;
+      margin-top: 1rem;
+
+      button {
+        font-size: 2.175rem;
       }
     }
   }
@@ -51,16 +63,17 @@ export const JoinGame = styled.div`
   width: 100%;
   background: white;
   padding: 2rem;
-  max-width: 455px;
+  max-width: 400px;
 
   margin: 0 auto;
   border-radius: 15px;
 
-  @media screen and (max-width: ${mobile}px) {
-    height: 100%;
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-radius: 0;
+    max-width: unset;
   }
 `;
 
@@ -137,7 +150,7 @@ export const Actions = styled.div`
       opacity: 0.7;
     }
 
-    @media screen and (max-width: ${mobile}px) {
+    @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
       margin-top: 1rem;
       width: 100%;
     }

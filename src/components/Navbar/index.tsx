@@ -1,39 +1,21 @@
-import Image from 'next/image';
-
 import { useTheme } from '~/styles/theme';
-import { Logo } from '~/components';
 
-import NavMobile from './NavMobile';
+import NavItem from './NavItem';
 import { Container, NavItems } from './styles';
 
-interface NavbarProps {
-  showLogo: boolean;
-}
-
-const Navbar = ({ showLogo }: NavbarProps) => {
+const Navbar = () => {
   const { showThemeSelection } = useTheme();
 
   return (
-    <>
-      <Container>
-        {showLogo && <Logo />}
-
-        <NavItems>
-          <button type="button" onClick={showThemeSelection}>
-            Temas
-            <Image
-              src="/assets/icons/theme.svg"
-              width={32}
-              height={32}
-              alt="Temas"
-              draggable={false}
-            />
-          </button>
-        </NavItems>
-
-        <NavMobile />
-      </Container>
-    </>
+    <Container>
+      <NavItems>
+        <NavItem
+          title="Temas"
+          icon="/assets/icons/theme.svg"
+          onClick={showThemeSelection}
+        />
+      </NavItems>
+    </Container>
   );
 };
 

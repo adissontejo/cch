@@ -13,6 +13,11 @@ export type Theme = {
     primary: string;
     secondary: string;
   };
+  breakpoints: {
+    sm: number;
+    md: number;
+    lg: number;
+  };
 };
 
 const themes = {
@@ -44,6 +49,13 @@ const themes = {
     },
     name: 'Farol',
   },
+  tumblr: {
+    colors: {
+      primary: '#f72585',
+      secondary: '#480ca8',
+    },
+    name: 'Tumblr',
+  },
   default: {
     colors: {
       primary: '#F46036',
@@ -64,6 +76,11 @@ const defaultTheme: DefaultTheme = {
   font: {
     primary: 'Bebas Neue',
     secondary: 'Bungee',
+  },
+  breakpoints: {
+    sm: 768,
+    md: 1024,
+    lg: 1400,
   },
 };
 
