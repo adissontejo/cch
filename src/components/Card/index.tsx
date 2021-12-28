@@ -1,10 +1,10 @@
 import { HTMLAttributes, useState } from 'react';
 import Image from 'next/image';
-
-import logoImg from '~/assets/icons/logo.svg';
-import infoIcon from '~/assets/icons/info.svg';
+import { formatDistance } from 'date-fns';
 
 import { Flipper, DivCard, DivInfo, DivInformation } from './styles';
+
+import Logo from '../Logo';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   data: {
@@ -39,19 +39,18 @@ const Card = ({
           <DivInformation visible={visible}>
             <p>autor: {data.author}</p>
             <p>baralho: {data.deck}</p>
-            {/* <p>criado em: {data.createdAt}</p> */}
+            <p>criado em: {formatDistance(data.createdAt, new Date())}</p>
           </DivInformation>
-          {/* <Image alt="Info icon" src={infoIcon} /> */}
+          <Image
+            width={200}
+            height={50}
+            alt="Info icon"
+            src="/assets/icons/info.svg"
+          />
         </DivInfo>
       </DivCard>
       <DivCard data={data} size={size} className="back">
-        {/* <Image
-          src={logoImg}
-          alt="Cartas contra humanidade"
-          width="75%"
-          draggable={false}
-          className="backside-image"
-        /> */}
+        <Logo />
       </DivCard>
     </Flipper>
   );

@@ -3,18 +3,21 @@ import styled from 'styled-components';
 export const Container = styled.nav`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  width: 100vw;
 
   height: 95px;
-  max-width: 1440px;
 
   margin: auto;
   padding: 1rem;
 
-  background-color: transparent;
-
   a {
     font-family: ${props => props.theme.font.primary};
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
+    height: 60px;
+    padding: 1rem 1rem 0;
   }
 `;
 
@@ -22,25 +25,7 @@ export const NavItems = styled.div`
   display: flex;
   flex: 1;
   justify-content: flex-end;
+  max-width: 1440px;
 
   gap: 2rem;
-
-  button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-
-    color: ${({ theme }) => theme.colors.white};
-    font-size: 1.5rem;
-    transition: all 0.2s;
-
-    :hover {
-      opacity: 0.8;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
 `;

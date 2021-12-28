@@ -17,6 +17,7 @@ const ThemeSelection = ({ dismiss }: ThemeSelecionProps) => {
 
         {Object.keys(themes).map(theme => (
           <Option
+            key={themes[theme].name}
             active={colorTheme === theme}
             name={themes[theme].name}
             colors={themes[theme].colors}

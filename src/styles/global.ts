@@ -8,6 +8,10 @@ export default createGlobalStyle`
     transition: all 0.2s;
   }
 
+  body {
+    background-color: ${({ theme }) => theme.colors.background};
+  }
+
   a {
     text-decoration: none;
   }
