@@ -1,10 +1,8 @@
-import { ThemeProvider } from 'styled-components';
-
 import GlobalStyles from '~/styles/global';
-import theme from '~/styles/theme';
+import { ThemeProvider } from '~/styles/theme';
 
 const MyApp = ({ Component, pageProps }) => (
-  <ThemeProvider theme={theme}>
+  <ThemeProvider>
     <GlobalStyles />
     <Component {...pageProps} />
   </ThemeProvider>

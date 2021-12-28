@@ -9,10 +9,10 @@ import { Flipper, DivCard, DivInfo, DivInformation } from './styles';
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   data: {
     text: string;
-    type: string;
-    autor: string;
-    baralho: string;
-    createdAt: string;
+    author: string;
+    deck: string;
+    createdAt: Date;
+    isQuestion: boolean;
   };
   size?: string;
   backside?: boolean;
@@ -37,21 +37,21 @@ const Card = ({
           onMouseLeave={() => setVisible(false)}
         >
           <DivInformation visible={visible}>
-            <p>autor: {data.autor}</p>
-            <p>baralho: {data.baralho}</p>
-            <p>criado em: {data.createdAt}</p>
+            <p>autor: {data.author}</p>
+            <p>baralho: {data.deck}</p>
+            {/* <p>criado em: {data.createdAt}</p> */}
           </DivInformation>
-          <Image src={infoIcon} />
+          {/* <Image alt="Info icon" src={infoIcon} /> */}
         </DivInfo>
       </DivCard>
       <DivCard data={data} size={size} className="back">
-        <Image
+        {/* <Image
           src={logoImg}
           alt="Cartas contra humanidade"
           width="75%"
           draggable={false}
           className="backside-image"
-        />
+        /> */}
       </DivCard>
     </Flipper>
   );

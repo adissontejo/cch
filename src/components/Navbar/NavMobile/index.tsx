@@ -3,7 +3,6 @@ import Image from 'next/image';
 
 import menuIcon from '~/assets/icons/menu.svg';
 import { NavToggle, NavItems } from './styles';
-import NavItem from '../NavItem';
 
 const NavMobile = () => {
   const [visible, setVisible] = useState<boolean>(false);
@@ -18,10 +17,7 @@ const NavMobile = () => {
         <Image src={menuIcon} />
       </NavToggle>
 
-      <NavItems visible={visible}>
-        <NavItem href="/" label="CRIE BARALHOS" />
-        <NavItem href="/" label="COMO JOGAR?" />
-      </NavItems>
+      <NavItems visible={visible} />
     </>
   );
 };

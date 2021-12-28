@@ -1,21 +1,36 @@
 import Image from 'next/image';
-import logoImg from '~/assets/logo.png';
 
-import NavItem from './NavItem';
+import { logoIcon, themeIcon } from '~/assets';
+import { useTheme } from '~/styles/theme';
+
 import NavMobile from './NavMobile';
 import { Container, NavItems } from './styles';
 
-const Navbar = () => (
-  <Container>
-    <Image src={logoImg} alt="Cartas Contra Humanidade" draggable={false} />
+interface NavbarProps {
+  showLogo: boolean;
+}
 
-    <NavItems>
-      <NavItem href="/" label="CRIE BARALHOS" />
-      <NavItem href="/" label="COMO JOGAR?" />
-    </NavItems>
+const Navbar = ({ showLogo }: NavbarProps) => {
+  const { showThemeSelection } = useTheme();
 
-    <NavMobile />
-  </Container>
-);
+  return (
+    <>
+      <Container>
+        {showLogo && (
+          <Image src={logoIcon} alt="Cartas Do Baralho" draggable={false} />
+        )}
+
+        <NavItems>
+          <button type="button" onClick={showThemeSelection}>
+            Temas
+            <Image src={themeIcon} alt="Temas" draggable={false} />
+          </button>
+        </NavItems>
+
+        <NavMobile />
+      </Container>
+    </>
+  );
+};
 
 export default Navbar;
