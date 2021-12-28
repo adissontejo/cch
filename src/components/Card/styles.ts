@@ -7,7 +7,7 @@ interface FlipperProps {
 
 interface CardProps {
   data: {
-    type: string;
+    isQuestion: boolean;
   };
   size: string;
 }
@@ -57,7 +57,7 @@ export const DivCard = styled.div<CardProps>`
     props.size === 'lg'
       ? 'width:290px; height:290px; font-size: 24px; line-height: 48px;'
       : '',
-    props.data.type === 'question'
+    props.data.isQuestion
       ? `background-color: ${props.theme.colors.primary};`
       : `background-color: ${props.theme.colors.secondary};`,
   ]};

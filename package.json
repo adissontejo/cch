@@ -22,6 +22,7 @@
     "@babel/preset-react": "^7.16.5",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.3",
     "@types/lodash": "^4.14.176",
     "@types/node": "^16.7.10",
     "@types/react": "^17.0.19",
@@ -39,6 +40,7 @@
     "eslint-plugin-react": "^7.25.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "jest": "^27.4.5",
+    "jest-svg-transformer": "^1.0.0",
     "prettier": "^2.4.1",
     "react-test-renderer": "^17.0.2",
     "typescript": "^4.4.2"

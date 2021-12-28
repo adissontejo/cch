@@ -10,11 +10,12 @@ module.exports = {
     /* Use babel-jest to transpile tests with the next/babel preset
     https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object */
     '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
+    '^.+\\.svg$': '<rootDir>/src/tests/svgTransform.js',
   },
   transformIgnorePatterns: ['/node_modules/'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
+    '^~/(.*)$': '<rootDir>/src/$1',
   },
-  moduleDirectories: ['node_modules', 'test-support/modules'],
+  moduleDirectories: ['node_modules', 'tests/modules'],
 };
